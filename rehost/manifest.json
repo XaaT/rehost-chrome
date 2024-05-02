@@ -8,8 +8,7 @@
   "permissions": [
     "clipboardWrite",
     "notifications",
-    "storage",
-    "menus"
+    "storage"
   ],
   "host_permissions": [
     "*://*/*"  
