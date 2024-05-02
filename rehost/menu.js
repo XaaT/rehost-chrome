@@ -14,17 +14,6 @@ const default_menu = [{
   "viewTypes": ["tab"],
   "visible": true
 
-const default_menu = [{
-  "contexts": ["image"],
-  "enabled": true,
-  "id": rehost_main_menu_id,
-  "targetUrlPatterns": ["*://*/*"],
-  "title": chrome.i18n.getMessage("extension_name"),
-  "type": "normal",
-  "viewTypes": ["tab"],
-  "visible": true
-}, {
-
 }, {
 
   // rehost without
