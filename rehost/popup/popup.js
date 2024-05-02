@@ -1,13 +1,13 @@
 const g_debug = false; // TODO
 
 function error_message(p_file, p_action, p_error) {
-  console.log("ERROR extension " + browser.i18n.getMessage("extension_name") +
+  console.error("ERROR extension " + chrome.i18n.getMessage("extension_name") +
     " : " + p_file + " : " + p_action + " :", p_error);
 }
 
 function debug_message(p_file, p_action, p_message) {
   if(g_debug) {
-    console.log("DEBUG extension " + browser.i18n.getMessage("extension_name") +
+    console.debug("DEBUG extension " + chrome.i18n.getMessage("extension_name") +
       " : " + p_file + " : " + p_action + " :", p_message);
   }
 }
@@ -110,42 +110,27 @@ function click_action() {
     l_id);
   if(l_id.startsWith("popup_")) { // radios and checkboxes
     if(this.querySelector("span.radio.checked") === null) {
-      browser.runtime.sendMessage(l_id).then(function() {
+      chrome.runtime.sendMessage(l_id, function() {
         debug_message("popup.js",
-          "click_action browser.runtime.sendMessage " + l_id,
+          "click_action chrome.runtime.sendMessage " + l_id,
           "ok");
-        window.close();
-      }).catch(function(p_error) {
-        error_message("popup.js",
-          "click_action browser.runtime.sendMessage " + l_id,
-          p_error);
         window.close();
       });
     } else {
       window.close();
     }
   } else if(l_id === "configuration") {
-    browser.runtime.openOptionsPage().then(function() {
+    chrome.runtime.openOptionsPage(function() {
       debug_message("popup.js",
-        "click_action browser.runtime.openOptionsPage",
+        "click_action chrome.runtime.openOptionsPage",
         "ok");
-      window.close();
-    }).catch(function(p_error) {
-      error_message("popup.js",
-        "click_action browser.runtime.openOptionsPage",
-        p_error);
       window.close();
     });
   } else { // history and temporary
-    browser.runtime.sendMessage(l_id).then(function() {
+    chrome.runtime.sendMessage(l_id, function() {
       debug_message("popup.js",
-        "click_action browser.runtime.sendMessage " + l_id,
+        "click_action chrome.runtime.sendMessage " + l_id,
         "ok");
-      window.close();
-    }).catch(function(p_error) {
-      error_message("popup.js",
-        "click_action browser.runtime.sendMessage " + l_id,
-        p_error);
       window.close();
     });
   }
@@ -160,13 +145,13 @@ window.addEventListener("load", function() {
   // i18n of the labels
   let l_trans = document.querySelectorAll(".trans");
   for(const l_tran of l_trans) {
-    l_tran.firstChild.nodeValue = browser.i18n.getMessage(l_tran.firstChild.nodeValue);
+    l_tran.firstChild.nodeValue = chrome.i18n.getMessage(l_tran.firstChild.nodeValue);
   }
   // get options
-  browser.runtime.sendMessage("get_options").then(function(p_data) {
+  chrome.runtime.sendMessage("get_options", function(p_data) {
     g_options = p_data;
     debug_message("popup.js",
-      "load browser.runtime.sendMessage get_options",
+      "load chrome.runtime.sendMessage get_options",
       g_options);
     // update_popup
     update_popup();
@@ -179,9 +164,5 @@ window.addEventListener("load", function() {
     }
     // loaded
     document.querySelector("body").classList.toggle("loading");
-  }).catch(function(p_error) {
-    error_message("popup.js",
-      "load browser.runtime.sendMessage get_options",
-      p_error);
   });
 }, false);
