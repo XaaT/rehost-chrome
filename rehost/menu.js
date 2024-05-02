@@ -1330,7 +1330,7 @@ function do_rehost(p_info, p_tab) {
     "do_rehost",
     [l_size, p_info]);
   let l_src = l_size !== "without" && g_params[g_options["host"]]["encode"] ?
-    encodeURIComponent(p_item["srcUrl"]) : p_item["srcUrl"];
+    encodeURIComponent(p_info["srcUrl"]) : p_info["srcUrl"];
   let l_break = g_options["break"] ? "\n" : "";
   let l_link_url;
   let l_image_url;
@@ -1348,12 +1348,12 @@ function do_rehost(p_info, p_tab) {
   let l_clipboard;
   let l_message_text;
   // naked link of the rehosted image
-  if(p_item["modifiers"].includes("Shift")) {
+  if(p_info["modifiers"].includes("Shift")) {
     l_clipboard = l_image_url + l_break;
     l_message_text = "notification_message_naked_link";
   }
   // bbcode of the rehosted image without the surrounding link
-  else if(p_item["modifiers"].includes("Ctrl")) {
+  else if(p_info["modifiers"].includes("Ctrl")) {
     l_clipboard = "[img]" + l_image_url + "[/img]" + l_break;
     l_message_text = "notification_message_bbcode_without_link";
   }
