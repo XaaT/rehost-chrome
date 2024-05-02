@@ -122,6 +122,25 @@ const g_params = {
 let g_options = Object.assign({}, default_options);
 
 function init_options(p_do_something) {
+  chrome.storage.local.get({
+    "options": default_options
+  }).then(function(p_data) {
+    debug_message("storage.js",
+      "init_options chrome.storage.local.get p_data[\"options\"]",
+      p_data["options"]);
+    for(const l_p in g_options) {
+      debug_message("storage.js",
+        "init_options g_options property",
+        l_p);
+      if(typeof p_data["options"][l_p] !== "undefined") {
+        g_options[l_p] = p_data["options"][l_p];
+        debug_message("storage.js",
+          "init_options p_data[\"options\"] value",
+          p_data["options"][l_p]);
+      }
+    }
+
+function init_options(p_do_something) {
   browser.storage.local.get({
     "options": default_options
   }).then(function(p_data) {
@@ -152,12 +171,12 @@ function init_options(p_do_something) {
     }
 
     debug_message("storage.js",
-      "init_options browser.storage.local.get g_options",
+      "init_options chrome.storage.local.get g_options",
       g_options);
     p_do_something();
   }).catch(function(p_error) {
     error_message("storage.js",
-      "init_options browser.storage.local.get options",
+      "init_options chrome.storage.local.get options",
       p_error);
   });
 }
@@ -188,72 +207,72 @@ function update_options(p_1, p_2) {
       g_options[p_1] = !g_options[p_1];
       break;
   }
-  browser.storage.local.set({
+  chrome.storage.local.set({
     "options": g_options
   }).then(function() {
     debug_message("storage.js",
-      "update_options browser.storage.local.set options",
+      "update_options chrome.storage.local.set options",
       "ok");
     update_menu();
   }).catch(function(p_error) {
     error_message("storage.js",
-      "update_options browser.storage.local.set options",
+      "update_options chrome.storage.local.set options",
       p_error);
   });
 }
 
 function open_histories(p_kind) {
   if(g_options["histories_todo"]) {
-    let l_histories_url = browser.runtime.getURL("/histories/" + p_kind + ".html");
-    browser.tabs.query({
+    let l_histories_url = chrome.runtime.getURL("/histories/" + p_kind + ".html");
+    chrome.tabs.query({
       "url": l_histories_url
     }).then(function(p_tabs) {
       debug_message("storage.js",
-        "open_histories browser.tabs.query " + p_kind,
+        "open_histories chrome.tabs.query " + p_kind,
         p_tabs);
       let l_found = false;
       for(const l_tab of p_tabs) {
         l_found = true;
-        browser.tabs.update(l_tab["id"], {
+        chrome.tabs.update(l_tab["id"], {
           "active": true
         }).then(function(p_tab) {
           debug_message("storage.js",
-            "open_histories browser.tabs.update " + p_kind,
+            "open_histories chrome.tabs.update " + p_kind,
             p_tab);
-          browser.windows.update(l_tab["windowId"], {
+          chrome.windows.update(l_tab["windowId"], {
             "focused": true
           }).then(function(p_windows) {
             debug_message("storage.js",
-              "open_histories browser.windows.update " + p_kind,
+              "open_histories chrome.windows.update " + p_kind,
               p_windows);
           }).catch(function(p_error) {
             error_message("storage.js",
-              "open_histories browser.windows.update " + p_kind,
+              "open_histories chrome.windows.update " + p_kind,
               p_error);
           });
         }).catch(function(p_error) {
           error_message("storage.js",
-            "open_histories browser.tabs.update " + p_kind,
+            "open_histories chrome.tabs.update " + p_kind,
             p_error);
         });
         break;
       }
       if(!l_found) {
-        browser.tabs.create({
+        chrome.tabs.create({
           url: "/histories/" + p_kind + ".html"
         }).then(function(p_tab) {
           debug_message("storage.js",
-            "open_histories browser.tabs.create " + p_kind,
+            "open_histories chrome.tabs.create " + p_kind,
             p_tab);
         }).catch(function(p_error) {
           error_message("storage.js",
-            "open_histories browser.tabs.create " + p_kind,
+            "open_histories chrome.tabs.create " + p_kind,
             p_error);
         });
       }
     }).catch(function(p_error) {
       error_message("storage.js",
-        "open_histories browser.tabs.query " + p_kind,
+        "open_histories chrome.tabs.query " + p_kind,
         p_error);
     });
   }
@@ -273,4 +292,4 @@ function message_handler(p_message, p_sender, p_send_response) {
     open_histories(p_message);
   }
 }
-browser.runtime.onMessage.addListener(message_handler);
+chrome.runtime.onMessage.addListener(message_handler);
