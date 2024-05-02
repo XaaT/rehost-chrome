@@ -612,19 +612,14 @@ const default_menu = [{
 }];
 
 function menu_creation(p_debug) {
-  if(browser.runtime.lastError) {
-    error_message("menu.js",
-      "menu_creation browser.menus.create",
-      browser.runtime.lastError);
-  } else {
-    debug_message("menu.js",
-      "menu_creation browser.menus.create",
-      p_debug);
-  }
+  // Suppression de la gestion de browser.runtime.lastError
+  debug_message("menu.js",
+    "menu_creation chrome.contextMenus.create",
+    p_debug);
 }
 
 for(const l_menu_item of default_menu) {
-  browser.menus.create(l_menu_item, function() {
+  chrome.contextMenus.create(l_menu_item, function() {
     menu_creation(l_menu_item.id);
   });
 }
@@ -1320,15 +1315,6 @@ function refresh_menu(p_gif = false) {
     debug_message("menu.js",
       "refresh_menu Promise.all",
       "ok");
-    browser.menus.refresh().then(function() {
-      debug_message("menu.js",
-        "refresh_menu browser.menus.refresh",
-        "ok");
-    }).catch(function(p_error) {
-      error_message("menu.js",
-        "refresh_menu browser.menus.refresh",
-        p_error);
-    });
   }).catch(function(p_error) {
     error_message("menu.js",
       "refresh_menu Promise.all",
@@ -1338,22 +1324,22 @@ function refresh_menu(p_gif = false) {
 
 const gif_regexp = /.*\.gif([&?].*)?$/i;
 
-browser.menus.onShown.addListener(function(p_infos) {
+chrome.contextMenus.onShown.addListener(function(p_infos, p_tab) {
   debug_message("menu.js",
-    "browser.menus.onShown",
+    "chrome.contextMenus.onShown",
     p_infos);
-  if(p_infos["mediaType"] === "image" && p_infos["srcUrl"]) {
-    refresh_menu(gif_regexp.test(p_infos["srcUrl"]));
+  if(p_infos.mediaType === "image" && p_infos.srcUrl) {
+    refresh_menu(gif_regexp.test(p_infos.srcUrl));
   }
 });
 
 init_options(update_menu);
 
-function do_rehost(p_item) {
-  let l_size = p_item["menuItemId"].split("_")[2];
+function do_rehost(p_info, p_tab) {
+  let l_size = p_info.menuItemId.split("_")[2];
   debug_message("menu.js",
     "do_rehost",
-    [l_size, p_item]);
+    [l_size, p_info]);
   let l_src = l_size !== "without" && g_params[g_options["host"]]["encode"] ?
     encodeURIComponent(p_item["srcUrl"]) : p_item["srcUrl"];
   let l_break = g_options["break"] ? "\n" : "";
@@ -1396,8 +1382,9 @@ function do_rehost(p_item) {
       "do_rehost navigator.clipboard.writeText",
       p_error);
   });
+  
   if(g_options["notifications"] === true) {
-    browser.notifications.create({
+    chrome.notifications.create({
       "type": "basic",
       "title": chrome.i18n.getMessage("extension_name"),
       "message": chrome.i18n.getMessage(l_message_text + l_without_rehost, [
@@ -1405,14 +1392,10 @@ function do_rehost(p_item) {
         chrome.i18n.getMessage("notification_host_" + g_options["host"])
       ]),
       "iconUrl": "images/rehost.svg"
-    }).then(function(p_id) {
+    }, function(p_id) {
       debug_message("menu.js",
-        "do_rehost browser.notifications.create",
+        "do_rehost chrome.notifications.create",
         p_id);
-    }).catch(function(p_error) {
-      error_message("menu.js",
-        "do_rehost browser.notifications.create",
-        p_error);
     });
   }
 }
@@ -1436,20 +1419,16 @@ browser.notifications.onClicked.addListener(function(p_id){
 });
 */
 
-function do_update(p_item) {
-  let l_item = p_item["menuItemId"].split("_");
+function do_update(p_info, p_tab) {
+  let l_item = p_info.menuItemId.split("_");
   update_options(l_item[2], l_item[3]);
 }
 
 function do_configuration() {
-  browser.runtime.openOptionsPage().then(function() {
+  chrome.runtime.openOptionsPage(function() {
     debug_message("menu.js",
-      "do_configuration browser.runtime.openOptionsPage",
+      "do_configuration chrome.runtime.openOptionsPage",
       "ok");
-  }).catch(function(p_error) {
-    error_message("menu.js",
-      "do_configuration browser.runtime.openOptionsPage",
-      p_error);
   });
 }
 
