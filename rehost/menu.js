@@ -617,23 +617,23 @@ function update_menu() {
   let l_promises = [];
   // rehost without
   if(g_options["without"] === true) {
-    l_promises.push(browser.menus.update("menu_item_without", {
+    l_promises.push(chrome.contextMenus.update("menu_item_without", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_without", {
+    l_promises.push(chrome.contextMenus.update("menu_item_without", {
       "enabled": false,
       "visible": false
     }));
   }
   // rehost gif
-  l_promises.push(browser.menus.update("menu_item_gif", {
+  l_promises.push(chrome.contextMenus.update("menu_item_gif", {
     "enabled": false,
     "visible": false
   }));
   // rehost original
-  l_promises.push(browser.menus.update("menu_item_original", {
+  l_promises.push(chrome.contextMenus.update("menu_item_original", {
     "enabled": true,
     "visible": true
   }));
@@ -641,12 +641,12 @@ function update_menu() {
   if((g_options["host"] === "wsrvnl" && g_options["wsrvnl_large"] === true) ||
     (g_options["host"] === "superhfr" && g_options["superhfr_large"] === true) ||
     (g_options["host"] === "auraiteu" && g_options["auraiteu_large"] === true)) {
-    l_promises.push(browser.menus.update("menu_item_large", {
+    l_promises.push(chrome.contextMenus.update("menu_item_large", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_large", {
+    l_promises.push(chrome.contextMenus.update("menu_item_large", {
       "enabled": false,
       "visible": false
     }));
@@ -655,12 +655,12 @@ function update_menu() {
   if((g_options["host"] === "wsrvnl" && g_options["wsrvnl_grand"] === true) ||
     (g_options["host"] === "superhfr" && g_options["superhfr_grand"] === true) ||
     (g_options["host"] === "auraiteu" && g_options["auraiteu_grand"] === true)) {
-    l_promises.push(browser.menus.update("menu_item_grand", {
+    l_promises.push(chrome.contextMenus.update("menu_item_grand", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_grand", {
+    l_promises.push(chrome.contextMenus.update("menu_item_grand", {
       "enabled": false,
       "visible": false
     }));
@@ -671,12 +671,12 @@ function update_menu() {
     (g_options["host"] === "wsrvnl" && g_options["wsrvnl_medium"] === true) ||
     (g_options["host"] === "superhfr" && g_options["superhfr_medium"] === true) ||
     (g_options["host"] === "auraiteu" && g_options["auraiteu_medium"] === true)) {
-    l_promises.push(browser.menus.update("menu_item_medium", {
+    l_promises.push(chrome.contextMenus.update("menu_item_medium", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_medium", {
+    l_promises.push(chrome.contextMenus.update("menu_item_medium", {
       "enabled": false,
       "visible": false
     }));
@@ -686,12 +686,12 @@ function update_menu() {
     (g_options["host"] === "wsrvnl" && g_options["wsrvnl_preview"] === true) ||
     (g_options["host"] === "superhfr" && g_options["superhfr_preview"] === true) ||
     (g_options["host"] === "auraiteu" && g_options["auraiteu_preview"] === true)) {
-    l_promises.push(browser.menus.update("menu_item_preview", {
+    l_promises.push(chrome.contextMenus.update("menu_item_preview", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_preview", {
+    l_promises.push(chrome.contextMenus.update("menu_item_preview", {
       "enabled": false,
       "visible": false
     }));
@@ -701,12 +701,12 @@ function update_menu() {
     (g_options["host"] === "wsrvnl" && g_options["wsrvnl_thumbnail"] === true) ||
     (g_options["host"] === "superhfr" && g_options["superhfr_thumbnail"] === true) ||
     (g_options["host"] === "auraiteu" && g_options["auraiteu_thumbnail"] === true)) {
-    l_promises.push(browser.menus.update("menu_item_thumbnail", {
+    l_promises.push(chrome.contextMenus.update("menu_item_thumbnail", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_thumbnail", {
+    l_promises.push(chrome.contextMenus.update("menu_item_thumbnail", {
       "enabled": false,
       "visible": false
     }));
@@ -716,12 +716,12 @@ function update_menu() {
     (g_options["host"] === "wsrvnl" && g_options["wsrvnl_mini"] === true) ||
     (g_options["host"] === "superhfr" && g_options["superhfr_mini"] === true) ||
     (g_options["host"] === "auraiteu" && g_options["auraiteu_mini"] === true)) {
-    l_promises.push(browser.menus.update("menu_item_mini", {
+    l_promises.push(chrome.contextMenus.update("menu_item_mini", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_mini", {
+    l_promises.push(chrome.contextMenus.update("menu_item_mini", {
       "enabled": false,
       "visible": false
     }));
@@ -734,149 +734,149 @@ function update_menu() {
   // host superhfr
   // host auraiteu
   if(g_options["menu_hosts"] !== false) {
-    l_promises.push(browser.menus.update("menu_item_separator_1", {
+    l_promises.push(chrome.contextMenus.update("menu_item_separator_1", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_separator_1", {
+    l_promises.push(chrome.contextMenus.update("menu_item_separator_1", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update(hosts_sub_menu_id, {
+    l_promises.push(chrome.contextMenus.update(hosts_sub_menu_id, {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_rehost", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_rehost", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_diberie", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_diberie", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_wsrvnl", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_wsrvnl", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_superhfr", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_superhfr", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_auraiteu", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_auraiteu", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_rehost", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_rehost", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_diberie", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_diberie", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_wsrvnl", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_wsrvnl", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_superhfr", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_superhfr", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_auraiteu", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_auraiteu", {
       "enabled": false,
       "visible": false
     }));
   }
   if(g_options["menu_hosts"] === "sub" ||
     (g_options["menu_hosts"] === true && g_options["menu_submenus"] === true)) { // TODO
-    l_promises.push(browser.menus.update(hosts_sub_menu_id, {
+    l_promises.push(chrome.contextMenus.update(hosts_sub_menu_id, {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_rehost", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_rehost", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_diberie", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_diberie", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_wsrvnl", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_wsrvnl", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_superhfr", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_superhfr", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_auraiteu", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_auraiteu", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_host_rehost", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_rehost", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_diberie", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_diberie", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_wsrvnl", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_wsrvnl", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_superhfr", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_superhfr", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_auraiteu", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_auraiteu", {
       "enabled": false,
       "visible": false
     }));
   }
   if(g_options["menu_hosts"] === true && g_options["menu_submenus"] === false) { // TODO
-    l_promises.push(browser.menus.update(hosts_sub_menu_id, {
+    l_promises.push(chrome.contextMenus.update(hosts_sub_menu_id, {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_rehost", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_rehost", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_diberie", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_diberie", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_wsrvnl", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_wsrvnl", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_superhfr", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_superhfr", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_host_auraiteu", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_host_auraiteu", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_host_rehost", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_rehost", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_host_diberie", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_diberie", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_host_wsrvnl", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_wsrvnl", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_host_superhfr", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_superhfr", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_host_auraiteu", {
+    l_promises.push(chrome.contextMenus.update("menu_item_host_auraiteu", {
       "enabled": true,
       "visible": true
     }));
@@ -884,20 +884,20 @@ function update_menu() {
   // separator 2 hosts / configuration
   // configuration
   if(g_options["menu_configuration"] === true && g_options["configuration_todo"]) { // TODO
-    l_promises.push(browser.menus.update("menu_item_separator_2", {
+    l_promises.push(chrome.contextMenus.update("menu_item_separator_2", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_configuration", {
+    l_promises.push(chrome.contextMenus.update("menu_item_configuration", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_separator_2", {
+    l_promises.push(chrome.contextMenus.update("menu_item_separator_2", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_configuration", {
+    l_promises.push(chrome.contextMenus.update("menu_item_configuration", {
       "enabled": false,
       "visible": false
     }));
@@ -906,12 +906,12 @@ function update_menu() {
   if((g_options["history"] === true || g_options["temporary"] === true) &&
     (g_options["menu_history"] === true || g_options["menu_temporary"] === true) &&
     g_options["histories_todo"]) { // TODO
-    l_promises.push(browser.menus.update("menu_item_separator_3", {
+    l_promises.push(chrome.contextMenus.update("menu_item_separator_3", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_separator_3", {
+    l_promises.push(chrome.contextMenus.update("menu_item_separator_3", {
       "enabled": false,
       "visible": false
     }));
@@ -919,12 +919,12 @@ function update_menu() {
   // history
   if(g_options["history"] === true && g_options["menu_history"] === true &&
     g_options["histories_todo"]) { // TODO
-    l_promises.push(browser.menus.update("menu_item_history", {
+    l_promises.push(chrome.contextMenus.update("menu_item_history", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_history", {
+    l_promises.push(chrome.contextMenus.update("menu_item_history", {
       "enabled": false,
       "visible": false
     }));
@@ -932,12 +932,12 @@ function update_menu() {
   // temporary history
   if(g_options["temporary"] === true && g_options["menu_temporary"] === true &&
     g_options["histories_todo"]) { // TODO
-    l_promises.push(browser.menus.update("menu_item_temporary", {
+    l_promises.push(chrome.contextMenus.update("menu_item_temporary", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_temporary", {
+    l_promises.push(chrome.contextMenus.update("menu_item_temporary", {
       "enabled": false,
       "visible": false
     }));
@@ -949,125 +949,125 @@ function update_menu() {
   // option link page
   // option break
   if(g_options["menu_options"] !== false) {
-    l_promises.push(browser.menus.update("menu_item_separator_4", {
+    l_promises.push(chrome.contextMenus.update("menu_item_separator_4", {
       "enabled": true,
       "visible": true
     }));
   } else {
-    l_promises.push(browser.menus.update("menu_item_separator_4", {
+    l_promises.push(chrome.contextMenus.update("menu_item_separator_4", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update(options_sub_menu_id, {
+    l_promises.push(chrome.contextMenus.update(options_sub_menu_id, {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_notifications", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_notifications", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_link_image", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_link_image", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_link_page", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_link_page", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_break", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_break", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_notifications", {
+    l_promises.push(chrome.contextMenus.update("menu_item_notifications", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_link_image", {
+    l_promises.push(chrome.contextMenus.update("menu_item_link_image", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_link_page", {
+    l_promises.push(chrome.contextMenus.update("menu_item_link_page", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_break", {
+    l_promises.push(chrome.contextMenus.update("menu_item_break", {
       "enabled": false,
       "visible": false
     }));
   }
   if(g_options["menu_options"] === "sub" ||
     (g_options["menu_options"] === true && g_options["menu_submenus"] === true)) { // TODO
-    l_promises.push(browser.menus.update(options_sub_menu_id, {
+    l_promises.push(chrome.contextMenus.update(options_sub_menu_id, {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_notifications", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_notifications", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_link_image", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_link_image", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_link_page", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_link_page", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("submenu_item_break", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_break", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_notifications", {
+    l_promises.push(chrome.contextMenus.update("menu_item_notifications", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_link_image", {
+    l_promises.push(chrome.contextMenus.update("menu_item_link_image", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_link_page", {
+    l_promises.push(chrome.contextMenus.update("menu_item_link_page", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_break", {
+    l_promises.push(chrome.contextMenus.update("menu_item_break", {
       "enabled": false,
       "visible": false
     }));
   }
   if(g_options["menu_options"] === true && g_options["menu_submenus"] === false) { // TODO
-    l_promises.push(browser.menus.update(options_sub_menu_id, {
+    l_promises.push(chrome.contextMenus.update(options_sub_menu_id, {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_notifications", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_notifications", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_link_image", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_link_image", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_link_page", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_link_page", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_break", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_break", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_notifications", {
+    l_promises.push(chrome.contextMenus.update("menu_item_notifications", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_link_image", {
+    l_promises.push(chrome.contextMenus.update("menu_item_link_image", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_link_page", {
+    l_promises.push(chrome.contextMenus.update("menu_item_link_page", {
       "enabled": true,
       "visible": true
     }));
-    l_promises.push(browser.menus.update("menu_item_break", {
+    l_promises.push(chrome.contextMenus.update("menu_item_break", {
       "enabled": true,
       "visible": true
     }));
@@ -1077,19 +1077,19 @@ function update_menu() {
   // disable them if not host TODO or host TODO ...
   if(g_options["host"] !== "TODO" && g_options["host"] !== "TODO") {
     //if(false) { // TODO
-    l_promises.push(browser.menus.update("submenu_item_link_image", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_link_image", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("submenu_item_link_page", {
+    l_promises.push(chrome.contextMenus.update("submenu_item_link_page", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_link_image", {
+    l_promises.push(chrome.contextMenus.update("menu_item_link_image", {
       "enabled": false,
       "visible": false
     }));
-    l_promises.push(browser.menus.update("menu_item_link_page", {
+    l_promises.push(chrome.contextMenus.update("menu_item_link_page", {
       "enabled": false,
       "visible": false
     }));
@@ -1110,60 +1110,60 @@ function refresh_menu(p_gif = false) {
   // gif management
   if(g_options["host"] === "rehost" || g_options["host"] === "diberie") {
     if(p_gif) {
-      l_promises.push(browser.menus.update("menu_item_gif", {
+      l_promises.push(chrome.contextMenus.update("menu_item_gif", {
         "enabled": true,
         "visible": true
       }));
-      l_promises.push(browser.menus.update("menu_item_original", {
+      l_promises.push(chrome.contextMenus.update("menu_item_original", {
         "enabled": false,
         "visible": false
       }));
-      l_promises.push(browser.menus.update("menu_item_medium", {
+      l_promises.push(chrome.contextMenus.update("menu_item_medium", {
         "enabled": false,
         "visible": false
       }));
-      l_promises.push(browser.menus.update("menu_item_preview", {
+      l_promises.push(chrome.contextMenus.update("menu_item_preview", {
         "enabled": false,
         "visible": false
       }));
-      l_promises.push(browser.menus.update("menu_item_thumbnail", {
+      l_promises.push(chrome.contextMenus.update("menu_item_thumbnail", {
         "enabled": false,
         "visible": false
       }));
-      l_promises.push(browser.menus.update("menu_item_mini", {
+      l_promises.push(chrome.contextMenus.update("menu_item_mini", {
         "enabled": false,
         "visible": false
       }));
     } else {
-      l_promises.push(browser.menus.update("menu_item_gif", {
+      l_promises.push(chrome.contextMenus.update("menu_item_gif", {
         "enabled": false,
         "visible": false
       }));
-      l_promises.push(browser.menus.update("menu_item_original", {
+      l_promises.push(chrome.contextMenus.update("menu_item_original", {
         "enabled": true,
         "visible": true
       }));
       if((g_options["host"] === "rehost" && g_options["rehost_medium"] === true) ||
         (g_options["host"] === "diberie" && g_options["diberie_medium"] === true)) {
-        l_promises.push(browser.menus.update("menu_item_medium", {
+        l_promises.push(chrome.contextMenus.update("menu_item_medium", {
           "enabled": true,
           "visible": true
         }));
       }
       if(g_options["host"] === "rehost" && g_options["rehost_preview"] === true) {
-        l_promises.push(browser.menus.update("menu_item_preview", {
+        l_promises.push(chrome.contextMenus.update("menu_item_preview", {
           "enabled": true,
           "visible": true
         }));
       }
       if(g_options["host"] === "rehost" && g_options["rehost_thumbnail"] === true) {
-        l_promises.push(browser.menus.update("menu_item_thumbnail", {
+        l_promises.push(chrome.contextMenus.update("menu_item_thumbnail", {
           "enabled": true,
           "visible": true
         }));
       }
       if(g_options["host"] === "diberie" && g_options["diberie_mini"] === true) {
-        l_promises.push(browser.menus.update("menu_item_mini", {
+        l_promises.push(chrome.contextMenus.update("menu_item_mini", {
           "enabled": true,
           "visible": true
         }));
@@ -1173,17 +1173,17 @@ function refresh_menu(p_gif = false) {
   // dark mode management
   let l_dark = window.matchMedia("(prefers-color-scheme: dark)").matches ?
     "_dark" : "_light";
-  l_promises.push(browser.menus.update("menu_item_configuration", {
+  l_promises.push(chrome.contextMenus.update("menu_item_configuration", {
     "icons": {
       "16": "images/icons/icon_configuration" + l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_history", {
+  l_promises.push(chrome.contextMenus.update("menu_item_history", {
     "icons": {
       "16": "images/icons/icon_history" + l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_temporary", {
+  l_promises.push(chrome.contextMenus.update("menu_item_temporary", {
     "icons": {
       "16": "images/icons/icon_temporary" + l_dark + ".svg"
     }
@@ -1192,109 +1192,109 @@ function refresh_menu(p_gif = false) {
   function checked(p_condition) {
     return p_condition ? "_checked" : "";
   }
-  l_promises.push(browser.menus.update("submenu_item_host_rehost", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_host_rehost", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "rehost") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("submenu_item_host_diberie", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_host_diberie", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "diberie") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("submenu_item_host_wsrvnl", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_host_wsrvnl", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "wsrvnl") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("submenu_item_host_superhfr", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_host_superhfr", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "superhfr") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("submenu_item_host_auraiteu", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_host_auraiteu", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "auraiteu") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_host_rehost", {
+  l_promises.push(chrome.contextMenus.update("menu_item_host_rehost", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "rehost") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_host_diberie", {
+  l_promises.push(chrome.contextMenus.update("menu_item_host_diberie", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "diberie") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_host_wsrvnl", {
+  l_promises.push(chrome.contextMenus.update("menu_item_host_wsrvnl", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "wsrvnl") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_host_superhfr", {
+  l_promises.push(chrome.contextMenus.update("menu_item_host_superhfr", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "superhfr") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_host_auraiteu", {
+  l_promises.push(chrome.contextMenus.update("menu_item_host_auraiteu", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["host"] === "auraiteu") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("submenu_item_notifications", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_notifications", {
     "icons": {
       "16": "images/controls/checkbox" + checked(g_options["notifications"] === true) +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("submenu_item_link_image", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_link_image", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["link"] === "image") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("submenu_item_link_page", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_link_page", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["link"] === "page") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("submenu_item_break", {
+  l_promises.push(chrome.contextMenus.update("submenu_item_break", {
     "icons": {
       "16": "images/controls/checkbox" + checked(g_options["break"] === true) +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_notifications", {
+  l_promises.push(chrome.contextMenus.update("menu_item_notifications", {
     "icons": {
       "16": "images/controls/checkbox" + checked(g_options["notifications"] === true) +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_link_image", {
+  l_promises.push(chrome.contextMenus.update("menu_item_link_image", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["link"] === "image") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_link_page", {
+  l_promises.push(chrome.contextMenus.update("menu_item_link_page", {
     "icons": {
       "16": "images/controls/radio" + checked(g_options["link"] === "page") +
         l_dark + ".svg"
     }
   }));
-  l_promises.push(browser.menus.update("menu_item_break", {
+  l_promises.push(chrome.contextMenus.update("menu_item_break", {
     "icons": {
       "16": "images/controls/checkbox" + checked(g_options["break"] === true) +
         l_dark + ".svg"
