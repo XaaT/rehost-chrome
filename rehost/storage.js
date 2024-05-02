@@ -140,25 +140,6 @@ function init_options(p_do_something) {
       }
     }
 
-function init_options(p_do_something) {
-  browser.storage.local.get({
-    "options": default_options
-  }).then(function(p_data) {
-    debug_message("storage.js",
-      "init_options browser.storage.local.get p_data[\"options\"]",
-      p_data["options"]);
-    for(const l_p in g_options) {
-      debug_message("storage.js",
-        "init_options g_options property",
-        l_p);
-      if(typeof p_data["options"][l_p] !== "undefined") {
-        g_options[l_p] = p_data["options"][l_p];
-        debug_message("storage.js",
-          "init_options p_data[\"options\"] value",
-          p_data["options"][l_p]);
-      }
-    }
-
     // correction des paramètres qui auraient une ancienne valeur obsolète
     // en cas de mise à jour des valeurs possibles dans default_options
     // les paramètres ajoutés ou supprimés sont déjà gérés
