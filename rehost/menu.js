@@ -9,10 +9,21 @@ const default_menu = [{
   "enabled": true,
   "id": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("extension_name"),
+  "title": chrome.i18n.getMessage("extension_name"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
+
+const default_menu = [{
+  "contexts": ["image"],
+  "enabled": true,
+  "id": rehost_main_menu_id,
+  "targetUrlPatterns": ["*://*/*"],
+  "title": chrome.i18n.getMessage("extension_name"),
+  "type": "normal",
+  "viewTypes": ["tab"],
+  "visible": true
+}, {
 
 }, {
 
@@ -26,7 +37,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_without"),
+  "title": chrome.i18n.getMessage("menu_item_without"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -43,7 +54,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_gif"),
+  "title": chrome.i18n.getMessage("menu_item_gif"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -60,7 +71,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_original"),
+  "title": chrome.i18n.getMessage("menu_item_original"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -77,7 +88,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_large"),
+  "title": chrome.i18n.getMessage("menu_item_large"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -94,7 +105,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_grand"),
+  "title": chrome.i18n.getMessage("menu_item_grand"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -111,7 +122,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_medium"),
+  "title": chrome.i18n.getMessage("menu_item_medium"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -128,7 +139,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_preview"),
+  "title": chrome.i18n.getMessage("menu_item_preview"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -145,7 +156,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_thumbnail"),
+  "title": chrome.i18n.getMessage("menu_item_thumbnail"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -162,7 +173,7 @@ const default_menu = [{
   "onclick": do_rehost,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_mini"),
+  "title": chrome.i18n.getMessage("menu_item_mini"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -187,7 +198,7 @@ const default_menu = [{
   "id": hosts_sub_menu_id,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("hosts_sub_menu"),
+  "title": chrome.i18n.getMessage("hosts_sub_menu"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -204,7 +215,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": hosts_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_auraiteu"),
+  "title": chrome.i18n.getMessage("menu_item_host_auraiteu"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -221,7 +232,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": hosts_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_diberie"),
+  "title": chrome.i18n.getMessage("menu_item_host_diberie"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -238,7 +249,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": hosts_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_rehost"),
+  "title": chrome.i18n.getMessage("menu_item_host_rehost"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -255,7 +266,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": hosts_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_superhfr"),
+  "title": chrome.i18n.getMessage("menu_item_host_superhfr"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -272,7 +283,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": hosts_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_wsrvnl"),
+  "title": chrome.i18n.getMessage("menu_item_host_wsrvnl"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -289,7 +300,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_auraiteu"),
+  "title": chrome.i18n.getMessage("menu_item_host_auraiteu"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -306,7 +317,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_diberie"),
+  "title": chrome.i18n.getMessage("menu_item_host_diberie"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -323,7 +334,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_rehost"),
+  "title": chrome.i18n.getMessage("menu_item_host_rehost"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -340,7 +351,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_superhfr"),
+  "title": chrome.i18n.getMessage("menu_item_host_superhfr"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -357,7 +368,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_host_wsrvnl"),
+  "title": chrome.i18n.getMessage("menu_item_host_wsrvnl"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -386,7 +397,7 @@ const default_menu = [{
   "onclick": do_configuration,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_configuration"),
+  "title": chrome.i18n.getMessage("menu_item_configuration"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -415,7 +426,7 @@ const default_menu = [{
   "onclick": do_history,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_history"),
+  "title": chrome.i18n.getMessage("menu_item_history"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -432,7 +443,7 @@ const default_menu = [{
   "onclick": do_temporary,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_temporary"),
+  "title": chrome.i18n.getMessage("menu_item_temporary"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -457,7 +468,7 @@ const default_menu = [{
   "id": options_sub_menu_id,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("options_sub_menu"),
+  "title": chrome.i18n.getMessage("options_sub_menu"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -474,7 +485,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": options_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_notifications"),
+  "title": chrome.i18n.getMessage("menu_item_notifications"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -491,7 +502,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": options_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_link_image"),
+  "title": chrome.i18n.getMessage("menu_item_link_image"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -508,7 +519,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": options_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_link_page"),
+  "title": chrome.i18n.getMessage("menu_item_link_page"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -525,7 +536,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": options_sub_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_break"),
+  "title": chrome.i18n.getMessage("menu_item_break"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": false
@@ -542,7 +553,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_notifications"),
+  "title": chrome.i18n.getMessage("menu_item_notifications"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -559,7 +570,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_link_image"),
+  "title": chrome.i18n.getMessage("menu_item_link_image"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -576,7 +587,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_link_page"),
+  "title": chrome.i18n.getMessage("menu_item_link_page"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -593,7 +604,7 @@ const default_menu = [{
   "onclick": do_update,
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
-  "title": browser.i18n.getMessage("menu_item_break"),
+  "title": chrome.i18n.getMessage("menu_item_break"),
   "type": "normal",
   "viewTypes": ["tab"],
   "visible": true
@@ -1388,10 +1399,10 @@ function do_rehost(p_item) {
   if(g_options["notifications"] === true) {
     browser.notifications.create({
       "type": "basic",
-      "title": browser.i18n.getMessage("extension_name"),
-      "message": browser.i18n.getMessage(l_message_text + l_without_rehost, [
-        browser.i18n.getMessage("notification_size_" + l_size),
-        browser.i18n.getMessage("notification_host_" + g_options["host"])
+      "title": chrome.i18n.getMessage("extension_name"),
+      "message": chrome.i18n.getMessage(l_message_text + l_without_rehost, [
+        chrome.i18n.getMessage("notification_size_" + l_size),
+        chrome.i18n.getMessage("notification_host_" + g_options["host"])
       ]),
       "iconUrl": "images/rehost.svg"
     }).then(function(p_id) {
