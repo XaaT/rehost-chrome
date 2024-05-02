@@ -609,7 +609,7 @@ function menu_creation(p_debug) {
 
 for(const l_menu_item of default_menu) {
   chrome.contextMenus.create(l_menu_item, function() {
-    menu_creation(l_menu_item.id);
+    menu_creation({ id: l_menu_item.id });
   });
 }
 
