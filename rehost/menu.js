@@ -11,7 +11,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("extension_name"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -28,7 +28,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_without"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -45,7 +45,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_gif"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -62,7 +62,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_original"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -79,7 +79,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_large"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -96,7 +96,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_grand"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -113,7 +113,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_medium"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -130,7 +130,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_preview"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -147,7 +147,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_thumbnail"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -164,7 +164,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_mini"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -176,7 +176,7 @@ const default_menu = [{
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
   "type": "separator",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -189,7 +189,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("hosts_sub_menu"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -206,7 +206,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_auraiteu"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -223,7 +223,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_diberie"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -240,7 +240,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_rehost"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -257,7 +257,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_superhfr"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -274,7 +274,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_wsrvnl"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -291,7 +291,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_auraiteu"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -308,7 +308,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_diberie"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -325,7 +325,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_rehost"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -342,7 +342,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_superhfr"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -359,7 +359,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_wsrvnl"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -371,7 +371,7 @@ const default_menu = [{
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
   "type": "separator",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -388,7 +388,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_configuration"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -400,7 +400,7 @@ const default_menu = [{
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
   "type": "separator",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -417,7 +417,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_history"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -434,7 +434,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_temporary"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -446,7 +446,7 @@ const default_menu = [{
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
   "type": "separator",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -459,7 +459,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("options_sub_menu"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -476,7 +476,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_notifications"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -493,7 +493,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_link_image"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -510,7 +510,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_link_page"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -527,7 +527,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_break"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": false
 
 }, {
@@ -544,7 +544,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_notifications"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -561,7 +561,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_link_image"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -578,7 +578,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_link_page"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }, {
@@ -595,7 +595,7 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_break"),
   "type": "normal",
-  "viewTypes": ["tab"],
+
   "visible": true
 
 }];
