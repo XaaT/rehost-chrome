@@ -11,7 +11,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("extension_name"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -28,7 +27,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_without"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -62,7 +60,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_original"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -79,7 +76,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_large"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -96,7 +92,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_grand"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -113,7 +108,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_medium"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -130,7 +124,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_preview"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -147,7 +140,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_thumbnail"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -164,7 +156,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_mini"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -176,7 +167,6 @@ const default_menu = [{
   "parentId": rehost_main_menu_id,
   "targetUrlPatterns": ["*://*/*"],
   "type": "separator",
-
   "visible": true
 
 }, {
@@ -206,7 +196,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_auraiteu"),
   "type": "normal",
-
   "visible": false
 
 }, {
@@ -223,7 +212,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_diberie"),
   "type": "normal",
-
   "visible": false
 
 }, {
@@ -240,7 +228,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_rehost"),
   "type": "normal",
-
   "visible": false
 
 }, {
@@ -257,7 +244,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_superhfr"),
   "type": "normal",
-
   "visible": false
 
 }, {
@@ -274,7 +260,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_wsrvnl"),
   "type": "normal",
-
   "visible": false
 
 }, {
@@ -291,7 +276,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_auraiteu"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -308,7 +292,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_diberie"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -325,7 +308,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_rehost"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -342,7 +324,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_superhfr"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -359,7 +340,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_host_wsrvnl"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -388,7 +368,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_configuration"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -417,7 +396,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_history"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -434,7 +412,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_temporary"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -544,7 +521,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_notifications"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -561,7 +537,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_link_image"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -578,7 +553,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_link_page"),
   "type": "normal",
-
   "visible": true
 
 }, {
@@ -595,7 +569,6 @@ const default_menu = [{
   "targetUrlPatterns": ["*://*/*"],
   "title": chrome.i18n.getMessage("menu_item_break"),
   "type": "normal",
-
   "visible": true
 
 }];
